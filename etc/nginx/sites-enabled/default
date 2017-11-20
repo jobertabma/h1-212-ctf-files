@@ -1,0 +1,11 @@
+server {
+	listen 127.0.0.1:1337 default_server;
+	root /var/www/flag;
+	index index.html index.htm index.nginx-debian.html;
+	server_name _;
+
+	location / {
+		autoindex on;
+		try_files $uri $uri/ =404;
+	}
+}
